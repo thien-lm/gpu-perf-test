@@ -1,0 +1,32 @@
+nvidia-smi -l 1
+sudo apt install hashcat
+sudo cat /etc/shadow
+###WINDOWS PASSWORD###
+sudo apt-get install chntpw
+F /mnt/windows/Windows/System32/config/SAM
+hashcat -m 1800 $y$j9T$IDuQRnRbQiERTBOl9AFAL/$aCGUY3s5YJl1C6XPJlKtix57JiDho2GoBBo/gTXqlt9 -a 3 ?a?a?a?a?a?a?a --increment
+hashcat -m 1000 ./hashes.txt -a 3 ?a?a?a?a?a?a?a?a --increment
+hashcat -m 1000 -a 3 -w 3 -O 7a21990fcd3d759941e45c490f143d5f -1 ?l?d ?1?1?1?1?1?1?1?1?1 -i --increment-min=5 
+hashcat -m 1000 -a 3 -w 3 -O 0b82e1dace77e29dd1de00896ba1c5bc -1 ?l?d ?1?1?1?1?1?1?1?1?1 -i --increment-min=5 --show
+hashcat -m 1000 0b82e1dace77e29dd1de00896ba1c5bc -a 3 ?a?a?a?a?a --increment --potfile-disable
+command option: https://cyberloginit.com/2017/12/26/hashcat-ntlm-brute-force.html
+hashcat -m 1000 -a 0 ./hashes.txt rockyou.txt
+#john the 
+sudo apt install john
+sudo john /etc/shadow --format=crypt
+samdump2 /path/to/SYSTEM /path/to/SAM > hashes.txt
+samdump2 ./SYSTEM ./SAM > hashes.txt
+#pypykatz
+git clone https://github.com/skelsec/pypykatz.git
+cd pypykatz
+python3 setup.py install
+pypykatz
+#note
+chỉ cần boot từ ổ cứng ngoài/ usb là đã có thể truy cập các file SAM, SYSTEM
+https://wiki.psuter.ch/doku.php?id=use_john_the_ripper_to_crack_password_hashes
+./run/john --list=formats
+https://github.com/openwall/john/blob/bleeding-jumbo/doc/INSTALL-UBUNTU
+sudo ./john  /home/thien/Desktop/GPU-Testcase/Craking\ computer\ password/hashed2.txt --format=sha512crypt-opencl -dev=gpu
+hashcat -m 1800 /home/thien/Desktop/GPU-Testcase/Craking\ computer\ password/hashed2.txt -a 3 ?a?a?a?a?a?a?a?a --increment
+hashcat -m 1800 /hashes.txt -a 3 -1 ?l?d?u ?1?1?1?1?1?1?1?1 --increment -o output.txt > oters.txt
+
